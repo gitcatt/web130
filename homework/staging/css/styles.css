@@ -1,0 +1,262 @@
+*{
+
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 100%;
+  font-family: Verdana, Helvetica-Neue, Arial, sans-serif;
+}
+a{
+  color:rgb(220,220,220);
+  text-decoration: none;
+  border-bottom: 1px dotted rgb(220,220,220);
+}
+a:hover{
+  color:white;
+  border-bottom: 1px dotted rgb(220,220,220);
+}
+img{
+  border-radius: 6px;
+}
+#header {
+  width: 98%;
+  padding: 1%;
+  margin: 1%;
+  height:166px;
+  /*background-color:gray;*/
+  background-image:url('../images/header.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box
+}
+#header h1{
+  color:rgb(220,220,220);
+  font-weight: normal;
+  margin:4% 0 0 0;
+}
+#header h2{
+  color:rgb(220,220,220);
+  font-weight: normal;
+  font-style: italic;
+  font-size:100%;
+  margin:0 0 1% 1%;
+}
+h3, h4{
+  font-size: 90%;
+}
+
+p{
+  font-size: 80%;
+  width:60%;
+  margin:0% 0 2% 0;
+}
+.blurb{
+  max-width:250px;
+}
+.caption{
+  font-style: italic;
+  font-size: 60%;
+  margin: .5% 0 0 0;
+  padding: 0 1% 0 1%;
+  width: 80%;
+}
+#header nav{
+  margin:0 0 0 1%;
+}
+#header nav ul{
+  height:1em;
+  list-style-type:none;
+  padding-left:10px;
+  position:relative;
+}
+#header nav li{
+  float:left;
+}
+#header nav li a{
+	background: gray;
+	text-decoration:none;
+	padding:5px 20px;
+	display:block;
+}
+#header nav li a:hover{
+	background:skyblue;
+	color:black;
+}
+
+/* SUB-MENU STYLES TO MAKE SUB NAV "TUCK" UNDER HEADER NAV */
+
+#header nav ul li ul{
+	position:absolute; /* gives child li something to be relative TO */
+	visibility:hidden;
+	opacity:0;
+	transition:visibility 0s linear 0.5s, opacity 0.5s linear;
+}
+#header nav ul li:hover ul{
+	visibility:visible;
+	opacity:1;
+	transition-delay:0s;
+}
+#header nav ul li ul li{
+	float:none;
+}
+#header nav ul li ul li:hover{
+	font-weight:bold;
+	color:green;
+}
+
+.inlineBold{
+  font-weight: bold;
+}
+.inlineItal{
+  font-style: italic;
+}
+
+#photo{
+  width:50%;
+  height:auto;
+  margin:0 0 0 0;
+}
+
+#main {
+  width: 58%;
+  padding: 1%;
+  margin: 1%;
+  height: 400px;
+  float: left;
+  border: 2px solid rgb(240,240,240);
+  border-radius: 6px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box
+}
+
+#side {
+  width: 38%;
+  padding: 1%;
+  margin: 1%;
+  height: 400px;
+  float: right;
+  border-radius: 6px;
+  border: 2px solid rgb(240,240,240);
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box
+}
+#side ol{
+  margin:0 0 0 2em;
+}
+#side ol li {
+  font-size: 80%;
+  line-height: 205%;
+}
+
+
+#footer {
+  clear:both;
+  width: 98%;
+  padding: 1%;
+  margin: 1%;
+  height: 3em;
+  background-color: rgb(80,80,80);
+  border:1px solid black;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box
+}
+#footer p{
+  color:white;
+  font-size: 40%;
+}
+
+
+
+/*++++++++++++MEDIA QUERIES++++++++++++*/
+
+@media all and (max-width:768px){
+ #header {
+    height:120px;
+ }
+ #header h1{
+  font-weight: normal;
+  margin:4% 0 0 0;
+}
+#header h2{
+  font-weight: normal;
+  font-style: italic;
+  font-size:100%;
+  margin:-0.5% 0 0 1%;
+}
+  #main {
+    float:none;
+    width:98%
+  }
+    #side {
+    float:none;
+    width:98%
+  }
+  #footer {
+  }
+ 
+}
+@media all and (max-width:500px){
+  #header {
+ }
+  #header h2{
+    display: none;
+  }
+  #header nav{
+  }
+  a{
+    color:black;
+    font-weight: bold;
+    width: 100%;
+    border-bottom: 0;
+    padding:2% 80% 2% 1em;
+  }
+  a:hover{
+    font-weight: bold;
+    border-bottom: 0;
+    width:100%;
+    color:white;
+  }
+  #header nav ul{
+    margin:0.5em 0 0 0;
+  }
+  #header nav ul li{
+  display:block;
+  background-color: silver;
+  margin:0 6% 0 0;  
+  padding:3% 0 3% 0;
+
+}
+
+  
+  #main {
+    float:none;
+    width:98%;
+    margin:4em 0 0 0;
+  }
+  .blurb{
+    width:100%;
+  }
+  .caption{
+    width: 250px;
+  }  
+  #side {
+    float:none;
+    width:98%
+  }
+  ul li {
+  font-size:.8em;
+  }
+  #footer {
+  }
+  #footer p {
+      font-size:.8em;
+  }
+  
+}
