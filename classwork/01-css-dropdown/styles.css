@@ -44,6 +44,6 @@ body{
   float:none;
   background:#778899;
 }
-#main-menu ul li ul li:hover{
+#main-menu ul li ul li a:hover{
   background:magenta;
 }
