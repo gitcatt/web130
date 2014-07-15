@@ -1,0 +1,306 @@
+@import "colors.less";
+
+/* ===========BORDERS=========== */
+@grayLink-220:1px dotted @gray220;
+
+.roundborder-6{
+	border-radius:6px;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+}
+@border-1:1px solid @black;
+
+@border-2:2px solid @gray220;
+
+.borderBox{
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	webkit-box-sizing:border-box;
+}
+@border-4:2px solid @gray240;
+
+.borderBox{
+	box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	webkit-box-sizing:border-box;
+}
+/* ===========FONTS=========== */
+
+@font-family:Verdana, Helvetica-Neue, Arial, sans-serif;
+
+
+
+
+/* ===========STYLES=========== */
+*{margin:0;padding:0;}
+
+body{
+	font-family:@font-family;
+	font-size:100%;
+}
+a{
+	text-decoration:none;
+	color:@gray220;
+	border-bottom:@grayLink-220;
+}
+a:hover{
+	color:@white;
+	border-bottom:@grayLink-220;
+}
+img{
+	.roundborder-6;
+}
+#header{
+	width:98%;
+	margin:1%;
+	padding:1%;
+	height:166px;
+	background-image:url('../images/header.jpg');
+	background-size:100%;
+	background-repeat:no-repeat;
+	.borderBox;
+
+	h1{
+		color:@gray220;
+		font-weight:normal;
+		margin:4% 0 0 0;
+	}
+	h2{
+		color:@gray220;
+		font-weight:normal;
+		font-style:italic;
+		font-size:100%;
+		margin:0 0 1% 1%;
+	}
+}
+h3, h4{
+	font-size:90%;
+}
+p{
+	font-size:80%;
+	width:60%;
+	margin:0 0 2% 0;
+}
+.blurb{
+	max-width:250px;	
+}
+.caption{
+	font-style:italic;
+	font-size:60%;
+	margin:.5% 0 0 0;
+	padding:0 1% 0 1%;
+	width:80%;
+}
+#header nav{
+	margin:0 0 0 1%;
+
+	ul{
+		height:1em;
+		list-style-type:none;
+		padding-left:10px;
+		position:relative;
+	}
+	li{
+		float:left;
+	}
+	li a{
+		background:@gray;
+		text-decoration:none;
+		padding:5px 20px;
+		display:block;
+	}
+	li a:hover{
+		background:@skyblue;
+		color:@black;
+	}
+}
+
+
+/* ===========SUB-MENU STYLES TO MAKE SUBNAV "TUCK" UNDER=========== */
+
+#header nav ul li ul{
+	position:absolute;
+	visibility:hidden;
+	opacity:0;
+	transition:visibility 0s linear 0.5s, opacity 0.5s linear;
+}
+#header nav ul li:hover ul{
+	visibility:visible;
+	opacity:1;
+	transition-delay:0s;
+}
+#header nav ul li ul li{
+	float:none;
+}
+#header nav ul li ul li a:hover{
+	font-weight:bold;
+	background:@white;
+	color:@green;
+}
+.inlineBold{
+	font-weight:bold;
+}
+.inlineItal{
+	font-style:italic;
+}
+#photo{
+	width:50%;
+	height:auto;
+	margin:0;
+}
+#main{
+	width:58%;
+	padding:1%;
+	margin:1%;
+	height:400px;
+	float:left;
+	.roundborder-6;
+	border:@border-4;
+	.borderBox;
+}
+#side{
+	width:38%;
+	padding:1%;
+	margin:1%;
+	height:400px;
+	float:right;
+	border:@border-4;
+	.roundborder-6;
+	.borderBox;
+
+	ol{
+		margin:0 0 0 2em;
+	}
+	ol li{
+		font-size:80%;
+		line-height:205%;
+	}
+}
+#footer{
+	clear:both;
+	width:98%;
+	padding:1%;
+	margin:1%;
+	height:3em;
+	background-color:@gray80;
+	border:@border-1;
+	.borderBox;
+
+	p{
+		color:@white;
+		font-size:60%;
+	}
+}
+/* ===========MEDIA QUERIES=========== */
+
+@media all and (max-width:768px){
+#header{
+	height:120px;
+
+	h1{
+		font-weight:normal;
+		margin:4% 0 0 0;
+	}
+	h2{
+		font-weight:normal;
+		font-style:italic;
+		font-size:100%;
+		margin:-0.5% 0 0 1%;
+	}
+}
+#main{
+	float:none;
+	width:98%;
+}
+#side{
+	float:none;
+	width:98%;
+}
+
+			}/* ===========END TABLET=========== */
+			
+@media all and (max-width:500px){
+#header{
+}
+#header h2{
+	display:none;
+}
+#header nav{
+}
+a{
+	color:@black;
+	font-weight:bold;
+	width:100%;
+	border-bottom:0;
+	padding:2% 80% 2% 1em;
+}
+a:hover{
+	font-weight:bold;
+	bordert-bottom:0;
+	width:100%;
+	color:@white;
+}
+#header nav{
+	margin:0;
+
+	ul{
+		margin:1.15em 0 0 0;
+		padding-left:0;
+	}
+	li{
+		float:none;
+	}
+	li a{
+		background:@gray;
+		text-decoration:none;
+		padding:5px 20px;
+		display:block;
+	}
+	ul li{
+		display:block;
+		background-color:@silver;
+		margin:0;
+		padding:0;
+	}
+}
+/* ===========SUB-MENU STYLES TO MAKE SUBNAV "TUCK" UNDER=========== */
+
+#header nav ul li ul{
+	position:absolute;
+	visibility:hidden;
+	opacity:0;
+	transition:visibility 0s linear 0.5s, opacity 0.5s linear;
+}
+#header nav ul li:hover ul{
+	visibility:visible;
+	opacity:1;
+	transition-delay:0s;
+}
+#header nav ul li ul li{
+	float:none;
+}
+#header nav ul li ul li a:hover{
+	font-weight:bold;
+	background:lighten(@black, 80%);
+	color:darken(@green, 20%);
+}
+#main{
+	float:none;
+	width:98%;
+	margin:4em 0 0 0;
+}
+.blurb{
+	width:100%;
+}
+.caption{
+	width:250px;
+}
+ul li{
+	font-size:0.8em
+}
+#footer{
+}
+#footer p{
+	font-size:0.8em;
+}
+			}/* ===========END PHONE=========== */
