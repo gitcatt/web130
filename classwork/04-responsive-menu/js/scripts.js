@@ -18,10 +18,10 @@ var ww = document.body.clientWidth;
     $(".toggleMenu").css("display", "inline-block");
     $(".nav").hide();
     $(".nav li a").click(function(){
-      $(this).parent("li").togggleClass("hover");
+      $(this).parent("li").toggleClass("hover");
    });
   } else {
-    $("toggleMenu").css("display", "none");
+    $(".toggleMenu").css("display", "none");
     $(".nav li").hover(function(){
       $(this).addClass("hover");
     }, function() {

@@ -81,7 +81,7 @@ a{
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width:800px);{
+@media screen and (max-width:800px){
   .nav > li{
     float:none;
   }
