@@ -1,0 +1,34 @@
+.tableBold{
+  font-weight:bold;
+}
+.words{
+  margin:2em 0 0 0;
+}
+.inlineItal{
+  font-style:italic;
+}
+.thingsKnow{
+  margin:2em 0 0 0;
+}
+.ifYouLike{
+  margin:3em 0 0 0;
+}
+.nav{
+  border:0;
+}
+footer{
+  border:solid rgb(0,0,0);
+  border-width:1px 0 0 0;
+  margin:4em 0 0 0;
+  padding:0 1.25em;
+  background-color:rgb(200,200,200);
+}
+footer p{
+  width:30%;
+  margin:2em 0 0 0;
+}
+footer ul li{
+  list-style-type:none;
+  display:inline;
+  padding:0 4em 0 0;
+}
