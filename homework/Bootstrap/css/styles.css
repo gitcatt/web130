@@ -7,6 +7,12 @@
 .inlineItal{
   font-style:italic;
 }
+.navbar-brand{
+  color:black;
+}
+.nav{
+  border:0;
+}
 .thingsKnow{
   margin:2em 0 0 0;
 }
