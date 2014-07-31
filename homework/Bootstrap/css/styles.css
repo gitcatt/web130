@@ -13,8 +13,9 @@
 .ifYouLike{
   margin:3em 0 0 0;
 }
-.nav{
-  border:0;
+
+a{
+  color:rgb(0,0,0);
 }
 footer{
   border:solid rgb(0,0,0);
