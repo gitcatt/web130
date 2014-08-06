@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>form-1</title>
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!-- <script src="js/jquery-2.1.1.min.js"></script> -->
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+  <style type=text/css>
+    p{color:white;font-family:verdana;}
+    #IceCreamCheck{border:1px solid black;width:45%;background:gray;padding:1em;}
+    #btn-one{margin:0 0 0 2em; padding:0 0 0 2em;}
+    .error{color:red;}
+    .hidden{display:none;}
+    </style>
+  <script type="text/javascript">
+    window.onload = function() {
+      document.getElementById("IceCreamCheck").onsubmit =
+      validateIceCream;
+    }
+      function validateIceCream()
+      {
+        var iceCream = document.getElementById("ice-cream").value;
+        var fIceCreamError = document.getElementById("error-ice-cream");
+        
+        //if they enter nothing in the text box
+        //then show an alert, and don't go to success page
+        //otherwise go directly to success page with no alert
+        
+        if(iceCream === "vanilla"){
+          fIceCreamError.className = "hidden";
+          return true;  //don't go to next page
+        } else {
+          fIceCreamError.className = "error";
+          return false; //go to next page
+        }
+
+     }
+  </script>
+</head>
+<body>
+  <form id="IceCreamCheck" action="success.html">  
+    <p>
+      <label for="ice-cream">what's your favorite ice cream?</label>
+      <input name="ice-cream" id="ice-cream" type="text">
+      <span id="error-ice-cream" class="error hidden">* Error</span>
+    </p>
+    <button id="btn-one" name="submit" type="submit">Submit</button>
+  </form>
+</body>
+</html>
+
+
+
+
