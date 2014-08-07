@@ -21,9 +21,21 @@
    }
    
    function validateForm(){
-     alert("validating");
+    var fname = document.getElementById("first-name").value;
+     var errorSpan = document.getElementById("error-first-name");
+     
+     if(fname === ""){
+//      alert("boo");
+       //show error and stay
+       errorSpan.className = "error";
+       return false;
+     } else {
+       //hide error and succeed
+       errorSpan.className = "hidden";
+       return true;
+     }
    }
-
+  
   
   
   </script>
@@ -32,21 +44,21 @@
   <form id="contact-form" action="success.html">
   <p>  <!--this could be done as a definition list-->
     <label for="first-name">First Name</label>
-    <input type="text" name="first-name">
+    <input type="text" name="first-name" id="first-name" >
     <span id="error-first-name" class="hidden">* Blank</span>
     </label>
     </p>
   
   <p>
     <label for="last-name">Last Name</label>
-    <input type="text" name="last-name">
+    <input type="text" name="last-name" id="last-name">
     <span id="error-last-name" class="hidden">* Blank</span>
     </label>
     </p>
   
   <p>
     <label for="phone">Phone</label>
-    <input type="text" name="phone">
+    <input type="text" name="phone" id="phone">
     <span id="error-phone" class="hidden">* Blank</span>
     </label>
     </p>
