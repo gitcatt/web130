@@ -15,9 +15,16 @@
   <form action="success.html" id="contact-form">
     <p> 
       <label for="first-name">First Name:
-        <input type="text" name="first-name" id="first-name">
+        <input type="text" name="first-name" id="first-name" required>
         </label>
       </p>
+    
+        <p> 
+      <label for="zipcode">zipcode:
+        <input type="text" name="zipcode" id="zipcode" data-parsley-type="digits" data-parsley-length="[5,5]" required>
+        </label>
+      </p>
+    
     <button type="submit" name="submit" id="submit">Submit</button>
   </form>
   <script type="text/javascript">
