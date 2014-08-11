@@ -19,14 +19,31 @@
       </p>
     
         <p> 
-      <label for="first-name">Last Name:
+      <label for="last-name">Last Name:
         <input type="text" name="last-name" id="last-name" required>
+        </label>
+      </p>
+    
+            <p> 
+      <label for="address">Address:
+        <input type="text" name="address" id="address" required>
         </label>
       </p>
     
         <p> 
       <label for="zipcode">zipcode:
         <input type="text" name="zipcode" id="zipcode" data-parsley-type="digits" data-parsley-length="[5,5]" required>
+        </label>
+      </p>
+    
+        <p> 
+      <label for="email">Email:
+        <input type="email" name="email" id="email" required>
+        </label>
+      </p>
+    
+      <label for="email-two">Re-enter Email:
+        <input type="email-two" name="email-two" id="email-two" required data-parsley-equalto="#email">
         </label>
       </p>
     
