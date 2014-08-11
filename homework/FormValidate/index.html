@@ -8,6 +8,8 @@
     <![endif]-->
   <script src="js/jquery-2.1.1.min.js"></script>
     <script src="js/parsley.min.js"></script>
+
+  
     <meta name="viewport" content="width=device-width, user-scalable=no">
 </head>
 <body>
@@ -64,10 +66,21 @@
           <option value="tokyo">Tokyo</option>
           <option value="other">Choose Other City</option>
       </select>
-                </label>               
-                               
+  </label>     <!--  END drop down menu -->
+  
+
+<label for="language">Please Choose your Language:<br>
+  <input type="checkbox" class="checkbox" name="language" value="english">English<br>
+  <input type="checkbox" class="checkbox"  name="language" value="spanish">Spanish<br>
+  <input type="checkbox" class="checkbox"  name="language" value="french">French 
+</label>     <!--  END drop language -->
   
   
+    <label for="question">Do you Ride a Bike? *</label>
+  <p>
+    <input type="radio" name="question2" value="yes" required /> Yes
+    <input type="radio" name="question2" value="no" /> No
+  </p>
   
     
     <button type="submit" name="submit" id="submit">Submit</button>
