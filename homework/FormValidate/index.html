@@ -46,8 +46,32 @@
         <input type="email-two" name="email-two" id="email-two" required data-parsley-equalto="#email">
         </label>
       </p>
+  
+ <label for="city">Please Choose your City:
+      <select name="Cities" required>
+        <option value="" selected disabled></option>  
+        <option value="seattle">Seattle</option>
+          <option value="chicago">Chicago</option>
+          <option value="montreal">Montreal</option>
+          <option value="newyork">New York</option>
+          <option value="belfast">Belfast</option>
+          <option value="london">London</option>
+          <option value="paris">Paris</option>
+          <option value="berlin">Berlin</option>
+          <option value="moscow">Moscow</option>
+          <option value="beijing">Beijing</option>
+          <option value="sydney">Sydney</option>
+          <option value="tokyo">Tokyo</option>
+          <option value="other">Choose Other City</option>
+      </select>
+                </label>               
+                               
+  
+  
+  
     
     <button type="submit" name="submit" id="submit">Submit</button>
+   
   </form>
   <script type="text/javascript">
     $("#contact-form").parsley();
