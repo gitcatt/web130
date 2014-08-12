@@ -6,14 +6,55 @@
     <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
   <script src="js/jquery-2.1.1.min.js"></script>
-    <script src="js/parsley.min.js"></script>
+  <script src="js/parsley.min.js"></script>
+<script type="text/javascript">
+  
+//   begin other area
+  
+  window.onload = function()
+  {
+    document.getElementById("city").onchange = showHideOther;
+  }
+  
+  function showHideOther()
+  {
+    var selectBox = document.getElementById("city");
+    
+    //if they pick the last option, "other"
+    if(selectBox.selectedIndex == selectBox.length -1)
+      {
+        document.getElementById("other-section").className = "";
+      }
+    else
+      {
+        document.getElementById("other-section").className = "hidden";        
+      }
+    
+  }
+  
+//   end other area
+  
+  
+  jQuery(function($) { // onDomReady
 
+    // reset handler that clears the form
+    $('form[name="myform"] input:reset').click(function () {
+        $('form[name="myform"]')
+            .find(':radio, :checkbox').removeAttr('checked').end()
+            .find('textarea, :text, select').val('')
+
+        return false;
+    });
+
+});
+</script>
   
     <meta name="viewport" content="width=device-width, user-scalable=no">
 </head>
 <body>
-  <form action="success.html" id="contact-form">
+  <form action="success.html" id="contact-form" data-parsley-validate>
     <p> 
       <label for="first-name">First Name:
         <input type="text" name="first-name" id="first-name" required>
@@ -50,8 +91,8 @@
       </p>
   
  <label for="city">Please Choose your City:
-      <select name="Cities" required>
-        <option value="" selected disabled></option>  
+      <select name="city" id="city" required>
+        <option value="select one">Select One</option>  
         <option value="seattle">Seattle</option>
           <option value="chicago">Chicago</option>
           <option value="montreal">Montreal</option>
@@ -68,12 +109,12 @@
       </select>
   </label>     <!--  END drop down menu -->
   
+  <p id="other-section" class="hidden">
+    <label>Please Enter your city if not shown in the list:
+      <textarea id="other" name="other"></textarea>
+    </label>  
+  </p>
 
-<label for="language">Please Choose your Language:<br>
-  <input type="checkbox" class="checkbox" name="language" value="english">English<br>
-  <input type="checkbox" class="checkbox"  name="language" value="spanish">Spanish<br>
-  <input type="checkbox" class="checkbox"  name="language" value="french">French 
-</label>     <!--  END drop language -->
   
   
     <label for="question">Do you Ride a Bike?</label>
@@ -82,8 +123,19 @@
     <input type="radio" name="question2" value="no" /> No
   </p>
   
+  
+  
+  <label for="language">Please Choose your Language:<br>
+  <input type="checkbox" class="checkbox" name="language" value="english" parsley-group="language" parsley-mincheck="1">English<br>
+  <input type="checkbox" class="checkbox"  name="language" value="spanish" parsley-group="language" >Spanish<br>
+  <input type="checkbox" class="checkbox"  name="language" value="french" parsley-group="language" >French 
+</label>     <!--  END drop language -->
+  
+  
     
     <button type="submit" name="submit" id="submit">Submit</button>
+  
+    <button type="reset" name="reset" id="reset">Clear</button>
    
   </form>
   <script type="text/javascript">

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width" />
+    <title>Web130 Asst 2 Responsive Skeletor JJohnson – Contact</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script>
+    window.onload = function()
+    {
+      var nameButton = document.getElementById("userName-btn");
+      nameButton.onclick = displayUserName;
+    }
+
+    function displayUserName()
+    {
+      var userName = prompt("Please type your first name");
+      var messageP = document.getElementById("message");
+
+      messageP.innerHTML = 'Hello, ' + userName + '. Thanks for stopping by!';
+    }
+    </script>
+  </head>
+  <body>
+   <div id="header">  <!-- BEGIN HEADER -->
+    <h1>WEB130</h1>
+     <h2>Contact Page</h2>
+
+      <nav>
+        <ul>
+          <li><a href="jj_resp_skeleton.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+   </div> <!-- END HEADER -->
+    
+     
+    <div id="main">
+      <p class="inlineBold">Contact Me</p>
+      <p>
+      Thank you for taking time to contact me and send a little message.
+      </p>
+
+      <button id="userName-btn">Please Press this Button
+      </button>
+
+      <p id="message"> </p>
+
+ <div id="photo">
+        <img src="images/pen.png" alt="photo of me at seattle gum wall" width="250" height="229">
+        <p class="caption">
+Old school works..
+        </p>
+      </div>
+
+    </div>
+
+
+
+    <div id="side">
+      <h4>List of things</h4>
+      <ol>
+         <li>A thing</li>
+         <li>An important thing</li>
+         <li>A very important thing</li>
+         <li>An extremely important thing</li>
+         <li>Whoa, <span class="inlineItal">Daddy!!</span></li>
+      </ol>
+    </div> <!-- END SIDE -->
+
+    <div id="footer">
+      <p>copyright 3 of spades 2014</p> 
+    </div>
+  </body>
+</html>
