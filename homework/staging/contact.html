@@ -5,7 +5,36 @@
   <meta name="viewport" content="width=device-width" />
     <title>Web130 Asst 2 Responsive Skeletor JJohnson – Contact</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <script>
+    <script src="js/jquery-2.1.1.min.js"></script>
+  <script src="js/parsley.min.js"></script>
+    <script type="text/javascript">
+      
+      //   begin other area
+  
+  window.onload = function()
+  {
+    document.getElementById("city").onchange = showHideOther;
+  }
+  
+  function showHideOther()
+  {
+    var selectBox = document.getElementById("city");
+    
+    //if they pick the last option, "other"
+    if(selectBox.selectedIndex == selectBox.length -1)
+      {
+        document.getElementById("other-section").className = "";
+      }
+    else
+      {
+        document.getElementById("other-section").className = "hidden";        
+      }
+    
+  }
+  
+//   end other area
+      
+      
     window.onload = function()
     {
       var nameButton = document.getElementById("userName-btn");
@@ -19,7 +48,23 @@
 
       messageP.innerHTML = 'Hello, ' + userName + '. Thanks for stopping by!';
     }
-    </script>
+      
+      
+        jQuery(function($) { // onDomReady
+
+    // reset handler that clears the form
+    $('form[name="myform"] input:reset').click(function () {
+        $('form[name="myform"]')
+            .find(':radio, :checkbox').removeAttr('checked').end()
+            .find('textarea, :text, select').val('')
+
+        return false;
+    });
+
+});
+  </script>
+  
+  
   </head>
   <body>
    <div id="header">  <!-- BEGIN HEADER -->
