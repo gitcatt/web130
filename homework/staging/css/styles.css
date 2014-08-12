@@ -20,6 +20,9 @@ a:hover{
 img{
   border-radius: 6px;
 }
+.hidden{
+  display:none;
+}
 #header {
   width: 98%;
   padding: 1%;
