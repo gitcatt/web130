@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width" />
+    <title>Web130 Asst 2 Responsive Skeletor JJohnson – Contact</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script src="js/jquery-2.1.1.min.js"></script>
+  <script src="js/parsley.min.js"></script>
+    <script type="text/javascript">
+      
+      //   begin other area
+  
+  window.onload = function()
+  {
+    document.getElementById("city").onchange = showHideOther;
+    
+    var nameButton = document.getElementById("userName-btn");
+    nameButton.onclick = displayUserName;
+  }
+  
+  function showHideOther()
+  {  
+    var selectBox = document.getElementById("city");
+    
+    //if they pick the last option, "other"
+    if(selectBox.selectedIndex == selectBox.length -1)
+      {
+        document.getElementById("other-section").className = "";
+      }
+    else
+      {
+        document.getElementById("other-section").className = "hidden";        
+      }
+  }
+//   end other area
+      
+//       get user name button
+
+    function displayUserName()
+    {
+      var userName = prompt("Please type your first name");
+      var messageP = document.getElementById("message");
+
+      messageP.innerHTML = 'Hello, ' + userName + '. Thanks for stopping by!';
+    }
+      
+//       END get user name button
+      
+//       Check language checkboxes
+      
+      function checkCheckBoxes(theForm) {
+          if (
+          theForm.CHECKBOX_1.checked == false &&
+          theForm.CHECKBOX_2.checked == false &&
+          theForm.CHECKBOX_3.checked == false) 
+          {
+            alert ('You didn\'t choose any of the checkboxes!');
+            return false;
+          } else { 
+            return true;
+          }
+}
+      
+  //       END Check language checkboxes    
+      
+        jQuery(function($) { // onDomReady
+
+    // reset handler that clears the form
+    $('form[name="myform"] input:reset').click(function () {
+        $('form[name="myform"]')
+            .find(':radio, :checkbox').removeAttr('checked').end()
+            .find('textarea, :text, select').val('')
+
+        return false;
+    });
+
+});
+  </script>
+  
+  
+  </head>
+  <body>
+   <div id="header">  <!-- BEGIN HEADER -->
+    <h1>WEB130</h1>
+     <h2>Contact Page</h2>
+
+      <nav>
+        <ul>
+          <li><a href="jj_resp_skeleton.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+   </div> <!-- END HEADER -->
+    
+     
+    <div id="main">
+      <p class="inlineBold">Contact Me</p>
+      
+           
+      <p>
+      Thank you for taking time to contact me and send a little message.
+      </p>
+
+      <button id="userName-btn">Please Press this Button
+      </button>
+      <p id="message"> </p>
+      
+      <p>
+Please fill out our contact form:
+      </p>
+
+
+<!--  <div id="photo">
+        <img src="images/pen.png" alt="photo of me at seattle gum wall" width="250" height="229">
+        <p class="caption">
+Old school works..
+        </p>
+      </div> -->
+
+      
+       <form action="success.html" id="contact-form" onsubmit="return checkCheckBoxes(this);">
+    <p> 
+      <label for="first-name">First Name:<br>
+        <input type="text" name="first-name" id="first-name" required placeholder="Required">
+        </label>
+      </p>
+    
+        <p> 
+      <label for="last-name">Last Name:<br>
+        <input type="text" name="last-name" id="last-name" required placeholder="Required">
+        </label>
+      </p>
+    
+            <p> 
+      <label for="address">Address:<br>
+        <input type="text" name="address" id="address" required placeholder="Required">
+        </label>
+      </p>
+    
+        <p> 
+      <label for="zipcode">Zipcode:<br>
+        <input type="text" name="zipcode" id="zipcode" data-parsley-type="digits" data-parsley-length="[5,5]" required placeholder="Required">
+        </label>
+      </p>
+    
+        <p> 
+      <label for="email">Email:<br>
+        <input type="email" name="email" id="email" required placeholder="Required">
+        </label>
+      </p>
+    
+         <p>
+      <label for="email-two">Re-enter Email:<br>
+        <input type="email-two" name="email-two" id="email-two" required data-parsley-equalto="#email" placeholder="Required">
+        </label>
+      </p>
+  
+         <p>
+ <label for="city">Please Choose your City:
+      <select name="city" id="city" required>
+          <option value="select one">Select One</option>  
+          <option value="seattle">Seattle</option>
+          <option value="chicago">Chicago</option>
+          <option value="montreal">Montreal</option>
+          <option value="newyork">New York</option>
+          <option value="belfast">Belfast</option>
+          <option value="london">London</option>
+          <option value="paris">Paris</option>
+          <option value="berlin">Berlin</option>
+          <option value="moscow">Moscow</option>
+          <option value="beijing">Beijing</option>
+          <option value="sydney">Sydney</option>
+          <option value="tokyo">Tokyo</option>
+          <option value="other">Choose Other City</option>
+      </select>
+  </label>     <!--  END drop down menu -->
+  </p>
+  <p id="other-section" class="hidden">
+    <label>Please Enter your city if not shown in the list:
+      <textarea id="other" name="other"></textarea>
+    </label>  
+  </p>
+
+  
+   <p>
+    <label for="question">Do you Ride a Bike?</label>
+     <input type="radio" name="question2" id="input1" required value="1" /> Yes
+    <input type="radio" name="question2" id="input2" value="2" /> No
+  </p>
+  
+  
+  <p>
+  <label for="language">Please Choose your Language:<br>
+  <input type="checkbox" class="checkbox" name="checkbox-1" value="english">English<br>
+  <input type="checkbox" class="checkbox"  name="checkbox-2" value="spanish">Spanish<br>
+  <input type="checkbox" class="checkbox"  name="checkbox-3" value="french">French 
+</label>     
+  </p> <!--  END drop language -->
+  
+    
+    <button type="submit" name="submit" id="submit">Submit</button>
+  
+    <button type="reset" name="reset" id="reset">Clear</button>
+   
+  </form>
+  <script type="text/javascript">
+    $("#contact-form").parsley();
+    </script>
+      
+      
+    </div>
+
+
+
+    <div id="side">
+      <h4>List of things</h4>
+      <ol>
+         <li>A thing</li>
+         <li>An important thing</li>
+         <li>A very important thing</li>
+         <li>An extremely important thing</li>
+         <li>Whoa, <span class="inlineItal">Daddy!!</span></li>
+      </ol>
+    </div> <!-- END SIDE -->
+
+    <div id="footer">
+      <p>copyright 3 of spades 2014</p> 
+    </div>
+  </body>
+</html>
