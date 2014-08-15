@@ -2,10 +2,25 @@
 
 	<head>
 
-		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="//code.jquery.com/jquery-latest.js"></script>
 
 		<script>
-
+  $(document).ready(function(){
+    $("#doStuff").click(showMessage);
+    $("#doStuff2").click(showMessage2);
+  });
+  
+      function showMessage(){
+//         $("#target").html("boo");
+        $("#target").load("message.txt", null, function(){alert("I am done")} );
+      }
+      
+        function showMessage2(){
+//         $("#target2").load("message2.html #div1");
+//           $("#target2").load("http://example.com/index.html");
+//           ^^not working due to same-origin policy
+            
+        }
 			
 
 		</script>
@@ -13,9 +28,16 @@
     </head>
 
 	<body>
+<div id="target">
+		<button id="doStuff">Do Stuff</button>
+  </div>
 
-		
-
+    <div id="target2">
+		<button id="doStuff2">Do Stuff 2</button>
+  </div>
+    
+    
 	</body>
+  
 
 </html>
